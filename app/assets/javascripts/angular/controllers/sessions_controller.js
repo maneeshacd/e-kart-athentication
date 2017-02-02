@@ -6,16 +6,20 @@ mainApp.controller('sessionsCtrl', ['$scope', '$rootScope', 'Auth', '$location',
     }, function(error) {
         alert(error.message)
     });
+  }
 
-    // $scope.$on('devise:login', function(event, currentUser) {
-    // });
-
-    // $scope.$on('devise:new-session', function(event, currentUser) {
-    // });
-
-    // $scope.$on('devise:unauthorized', function(event, xhr, deferred) {
-
-    // })
+  $scope.register = function(){
+    Auth.register($scope.signup).then(function(response) {
+      $location.path( "/users" )
+    }, function(error) {
+      errors = []
+      $.each(error.data.errors,function(k, v){
+        concat = []
+        $.each(v, function(i, v){concat.push(k + ' '+ v)})
+        errors.push(concat)
+      })
+      alert(errors)
+    });
   }
 
 }])

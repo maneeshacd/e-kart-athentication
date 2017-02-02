@@ -23,7 +23,6 @@ mainApp.config(['$routeProvider', '$locationProvider', '$resourceProvider',
 
 mainApp.config(function(AuthProvider) {
   AuthProvider.onUnauthorized=function(event, xhr, deferred) {
-    alert(1)
   }
 })
 
