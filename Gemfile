@@ -60,4 +60,5 @@ source "https://rails-assets.org" do
 end
 gem 'angular_rails_csrf'
 gem 'pry-rails'
+gem "httparty"
 gem "koala", "~> 2.2"

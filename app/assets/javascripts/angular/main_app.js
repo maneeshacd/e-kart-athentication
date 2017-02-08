@@ -25,7 +25,18 @@ mainApp.config(['$routeProvider', '$locationProvider', '$resourceProvider', '$au
   });
 
   $authProvider.google({
-    clientId: '443127887775-in0in6478toc2kuqloil6ck8pl0t4n95.apps.googleusercontent.com'
+    clientId: '443127887775-in0in6478toc2kuqloil6ck8pl0t4n95.apps.googleusercontent.com',
+    responseType: 'token',
+    authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+      redirectUri: window.location.origin,
+      requiredUrlParams: ['scope'],
+      optionalUrlParams: ['display'],
+      scope: ['profile', 'email'],
+      scopePrefix: 'openid',
+      scopeDelimiter: ' ',
+      display: 'popup',
+      oauthType: '2.0',
+      popupOptions: { width: 452, height: 633 }
   });
 }])
 
