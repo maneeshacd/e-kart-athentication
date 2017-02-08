@@ -19,10 +19,11 @@
 //= require angular-route
 //= require angular-resource
 //= require devise-min
-
+//= require satellizer
 
 
 
 //= require angular/main_app
 //= require_tree ./angular/controllers
 //= require_tree ./templates
+//= require_tree ./angular/services

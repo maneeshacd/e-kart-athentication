@@ -14,5 +14,12 @@ module EKartDevise
     config.to_prepare do
       DeviseController.respond_to :html, :json
     end
+    config.after_initialize do |app|
+      app.assets.context_class.class_eval do
+        include ApplicationHelper
+        include ActionView::Helpers
+        include Rails.application.routes.url_helpers
+      end
+    end
   end
 end
