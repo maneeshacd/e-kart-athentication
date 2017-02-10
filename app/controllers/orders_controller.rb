@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
         razorpay_pmnt_obj.capture({amount: 100})
         razorpay_pmnt_obj = Razorpay::Payment.fetch(params[:payment_id])
         @order = Order.create(product_id: params[:product_id])
-        render json: { data: @order }
+        redirect_to '/'
       else
         raise StandardError, "UNable to capture payment"
       end
