@@ -17,6 +17,11 @@ mainApp.config(['$routeProvider', '$locationProvider', '$resourceProvider', '$au
     controller: 'usersCtrl'
   })
 
+  $routeProvider.when('/products',{
+    templateUrl: 'products/products.html',
+    controller: 'productsCtrl'
+  })
+
   $locationProvider.html5Mode(true)
 
   $authProvider.facebook({

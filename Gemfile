@@ -62,3 +62,6 @@ gem 'angular_rails_csrf'
 gem 'pry-rails'
 gem "httparty"
 gem "koala", "~> 2.2"
+gem 'razorpay'
+gem "respond-rails", "~> 1.0"
+gem "responders"

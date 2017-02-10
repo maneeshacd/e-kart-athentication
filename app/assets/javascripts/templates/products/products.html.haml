@@ -1,0 +1,8 @@
+.products{'ng-repeat': 'product in products'}
+  %a{href: ''}
+    %p
+      {{product.name}}
+    %img{src: '{{product.image}}'}
+      %h3 Manual checkout
+      %input#rzp-button1.razorpay-payment-button{type: "button", value: "Pay with razorpay", 'ng-click': 'payment()'}/
+
